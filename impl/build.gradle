@@ -1,0 +1,9 @@
+apply plugin:'java'
+apply plugin: 'jacoco'
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    compile group: 'mysql', name: 'mysql-connector-java'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+}

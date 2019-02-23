@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.valandro.impl.data.SomeEntityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-23T00:57:45" hostname="MacBook-Air-de-Lucas.local" time="0.0">
+  <properties/>
+  <testcase name="constructor" classname="com.valandro.impl.data.SomeEntityTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

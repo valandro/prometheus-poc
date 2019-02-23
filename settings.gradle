@@ -1,0 +1,5 @@
+rootProject.name = 'spring-template'
+include 'contract'
+include 'impl'
+include 'spring-boot-tests'
+

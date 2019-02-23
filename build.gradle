@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.springframework.boot' version '2.0.3.RELEASE'
+}
+
+dependencies {
+    compile project(':contract')
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
+    apply plugin: 'io.spring.dependency-management'
+
+    group 'com.valandro'
+    version '1.0.0'
+
+    ext {
+        jacocoVersion = '0.7.5.201505241946'
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_10
+    targetCompatibility = JavaVersion.VERSION_1_10
+
+    repositories {
+        mavenLocal()
+        maven {
+            url 'http://repo.spring.io/release'
+        }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.cloud:spring-cloud-sleuth:2.0.0.RELEASE'
+            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.RELEASE'
+        }
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-webflux")
+        compile('javax.xml.bind:jaxb-api:2.3.0')
+        compile('com.sun.xml.bind:jaxb-core:2.3.0')
+        compile('com.sun.xml.bind:jaxb-impl:2.3.0')
+        compile('javax.activation:activation:1.1.1')
+        compileOnly("org.projectlombok:lombok:1.18.2")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+
+    subprojects {
+        sourceCompatibility = JavaVersion.VERSION_1_10
+        targetCompatibility = JavaVersion.VERSION_1_10
+    }
+}
+
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+    reports {
+        xml.enabled true
+        xml.destination "${buildDir}/reports/jacoco/report.xml"
+        html.enabled true
+        html.destination "${buildDir}/reports/jacoco/html"
+        csv.enabled false
+    }
+
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
+}
