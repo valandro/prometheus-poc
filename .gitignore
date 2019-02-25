@@ -33,3 +33,4 @@ gradle.properties
 /.nb-gradle/
 build/
 out/
+.DS_Store

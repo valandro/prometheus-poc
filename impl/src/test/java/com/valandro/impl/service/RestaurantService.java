@@ -1,17 +1,17 @@
 package com.valandro.impl.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.valandro.impl.repository.SomeRepository;
+import com.valandro.impl.repository.RestaurantsRepository;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 
-public class AuthServiceTest {
+public class RestaurantService {
     @Spy
     @InjectMocks
-    private AuthService authService;
+    private RestaurantService restaurantService;
     @Mock
-    private SomeRepository someRepository;
+    private RestaurantsRepository restaurantsRepository;
     @Mock
     private ObjectMapper objectMapper;
 }

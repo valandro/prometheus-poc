@@ -2,7 +2,7 @@
 
 # Prometheus POC
 
-A POC using Prometheus to instrument an spring boot application.
+A POC using Prometheus to instrument an Spring Boot Application.
 
 ### License
 MIT License. [Click here for more information.](LICENSE)
