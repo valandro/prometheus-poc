@@ -45,6 +45,8 @@ allprojects {
         compile('com.sun.xml.bind:jaxb-core:2.3.0')
         compile('com.sun.xml.bind:jaxb-impl:2.3.0')
         compile('javax.activation:activation:1.1.1')
+        compile('io.prometheus:simpleclient:0.6.0')
+        compile('io.prometheus:simpleclient_spring_boot:0.6.0')
         compileOnly("org.projectlombok:lombok:1.18.2")
         testCompile("org.springframework.boot:spring-boot-starter-test")
     }
