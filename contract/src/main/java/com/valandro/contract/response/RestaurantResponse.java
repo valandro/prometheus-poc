@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Response {
+public class RestaurantResponse {
     @JsonProperty("endereco")
     public String address;
     @JsonProperty("cidade")

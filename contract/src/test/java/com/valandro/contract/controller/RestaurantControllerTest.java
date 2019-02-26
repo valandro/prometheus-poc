@@ -1,4 +1,4 @@
-package com.valandro.contract;
+package com.valandro.contract.controller;
 
 import com.valandro.WebFluxApplicationTests;
 import org.junit.Before;

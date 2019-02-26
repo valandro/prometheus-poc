@@ -1,21 +1,21 @@
 package com.valandro.contract.binder;
 
-import com.valandro.contract.response.Response;
+import com.valandro.contract.response.RestaurantResponse;
 import com.valandro.impl.data.RestaurantEntity;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ContractBinder {
+public class RestaurantBinder {
 
-    public static List<Response> bindToResponseList(List<RestaurantEntity> restaurantEntity) {
+    public static List<RestaurantResponse> bindToResponseList(List<RestaurantEntity> restaurantEntity) {
         return restaurantEntity.stream()
-                               .map(ContractBinder::bindToResponse)
+                               .map(RestaurantBinder::bindToResponse)
                                .collect(Collectors.toList());
     }
 
-    private static Response bindToResponse(RestaurantEntity restaurantEntity) {
-        return Response.builder()
+    private static RestaurantResponse bindToResponse(RestaurantEntity restaurantEntity) {
+        return RestaurantResponse.builder()
                 .address(restaurantEntity.getAddress())
                 .city(restaurantEntity.getCity())
                 .outCode(restaurantEntity.getOutCode())

@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import static org.hamcrest.Matchers.any;
 import static org.junit.Assert.*;
 
-public class ExceptionResponseBodyTest {
+public class ExceptionRestaurantResponseBodyTest {
     private ExceptionResponseBody exception;
 
     @Before
