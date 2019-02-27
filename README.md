@@ -28,6 +28,45 @@ displays the results, and can trigger alerts if some condition is observed to be
 
 More info is available on [Prometheus's Github.](https://github.com/prometheus/prometheus)
 
+#### Enviroment 
+
+First of all you need to create a `prometheus.yml` on your server.
+
+That `prometheus.yml` have the configuration for monitoring your application.
+
+```yml
+global:
+  scrape_interval:     10s
+  evaluation_interval: 10s
+
+scrape_configs:
+  - job_name: 'prometheus-poc'
+    static_configs:
+      - targets: ['localhost:8091']
+```
+
+After that, create a simple `Dockerfile`
+
+```Dockerfile
+FROM prom/prometheus
+# Add in the configuration file from the local directory.
+ADD prometheus.yml /etc/prometheus/prometheus.yml
+```
+
+Then create a **Docker Image** using this `Dockerfile`
+
+```
+docker build -t prometheus-poc .
+```
+
+And for running a container, just run 
+
+```
+docker run -p 9090:9090 prometheus-poc
+```
+
+Now you have the **Prometheus** running on port `9090`.
+
 #### References
 
 You can watch a [TechPrimers video](https://www.youtube.com/watch?v=PiBeO4E1xAU) talking about Prometheus instrumentation
