@@ -2,8 +2,8 @@
 
 # Prometheus POC
 
-It's a POC `(Proof of concept)` using Prometheus to instrument an Spring Boot Application. Micrometer has to be used 
-for handling the endpoint, because Prometheus client libraries has no longer compatibility with **Spring Boot 2.x**. 
+It's a POC `(Proof of concept)` using Prometheus to instrument an Spring Boot Application. Micrometer had to be used 
+for handling the endpoint, because **Prometheus client libraries** has no longer compatibility with **Spring Boot 2.x**. 
 
 ### Micrometer
 
