@@ -16,6 +16,10 @@ Micrometer is the instrumentation library underpinning Spring Boot 2.0's metrics
 
 More info is available on [Micrometer's Github.](https://github.com/micrometer-metrics/micrometer)
 
+#### References
+
+You can watch a [TechPrimers video](https://www.youtube.com/watch?v=PiBeO4E1xAU) talking about Micrometer.
+
 ### Prometheus
 
 Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system. 
@@ -23,6 +27,12 @@ It collects metrics from configured targets at given intervals, evaluates rule e
 displays the results, and can trigger alerts if some condition is observed to be true.
 
 More info is available on [Prometheus's Github.](https://github.com/prometheus/prometheus)
+
+#### References
+
+You can watch a [TechPrimers video](https://www.youtube.com/watch?v=PiBeO4E1xAU) talking about Prometheus instrumentation
+using Micrometer in a Spring Boot Application.
+
 
 ### License
 MIT License. [Click here for more information.](LICENSE)
