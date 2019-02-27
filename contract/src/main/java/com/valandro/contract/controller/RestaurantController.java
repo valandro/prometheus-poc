@@ -4,8 +4,6 @@ import com.valandro.contract.facade.RestaurantFacade;
 import com.valandro.contract.response.RestaurantResponse;
 import io.prometheus.client.Counter;
 import io.prometheus.client.Histogram;
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +14,6 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 public class RestaurantController {
 
     @Autowired
