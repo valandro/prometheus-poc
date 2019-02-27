@@ -8,7 +8,7 @@ variables:
   SERVICE_NAME: 'prometheus-poc'
   DEPLOY_PATH: '/home/projects/$SERVICE_NAME'
   SERVICE_DIST_FILE_PATH: 'build/libs/*.jar'
-  APP_PORT: 8090
+  APP_PORT: 8091
 
 before_script:
   - echo "Before script..."
