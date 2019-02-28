@@ -23,14 +23,14 @@ public class RestaurantController {
     private RestaurantFacade restaurantFacade;
 
     @Timed(
-        value = "valandro.restaurants.get",
+        value = "restaurants.get",
         histogram = true,
         percentiles = {0.95, 0.99},
         extraTags = {"version", "1.0"}
     )
     @GetMapping(path = "",
                 produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<List<RestaurantResponse>> getRestaurantByFoodType(@RequestParam("foodType") String foodType){
+    public Mono<List<RestaurantResponse>> getRestaurantByFoodType(@RequestParam("tipo_de_comida") String foodType){
         return this.restaurantFacade.getRestaurantByFoodType(foodType);
     }
 }
