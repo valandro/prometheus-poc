@@ -3,8 +3,6 @@ package com.valandro.contract.controller;
 import com.valandro.contract.facade.RestaurantFacade;
 import com.valandro.contract.response.RestaurantResponse;
 import io.micrometer.core.annotation.Timed;
-import io.prometheus.client.Counter;
-import io.prometheus.client.Histogram;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

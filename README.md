@@ -36,13 +36,34 @@ That `prometheus.yml` have the configuration for monitoring your application.
 
 ```yml
 global:
-  scrape_interval:     10s
-  evaluation_interval: 10s
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
 
 scrape_configs:
-  - job_name: 'prometheus-poc'
+  
+  - job_name: 'prometheus'
+    # metrics_path default is /metrics
     static_configs:
-      - targets: ['localhost:8091']
+    - targets: ['127.0.0.1:9090']
+
+  - job_name: 'prometheus-poc'
+    metrics_path: '/prometheus'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['IP:PORT']
 ```
 
 After that, create a simple `Dockerfile`
@@ -52,6 +73,7 @@ FROM prom/prometheus
 # Add in the configuration file from the local directory.
 ADD prometheus.yml /etc/prometheus/prometheus.yml
 ```
+> *You will need the prom/prometheus image downloaded to your machine* 
 
 Then create a **Docker Image** using this `Dockerfile`
 
