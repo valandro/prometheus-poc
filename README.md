@@ -28,7 +28,12 @@ displays the results, and can trigger alerts if some condition is observed to be
 
 More info is available on [Prometheus's Github.](https://github.com/prometheus/prometheus)
 
-#### Enviroment 
+#### References
+
+You can watch a [TechPrimers video](https://www.youtube.com/watch?v=PiBeO4E1xAU) talking about Prometheus instrumentation
+using Micrometer in a Spring Boot Application.
+
+### Enviroment 
 
 First of all you need to create a `prometheus.yml` on your server.
 
@@ -73,7 +78,7 @@ FROM prom/prometheus
 # Add in the configuration file from the local directory.
 ADD prometheus.yml /etc/prometheus/prometheus.yml
 ```
-> *You will need the prom/prometheus image downloaded to your machine* 
+> **You will need the prom/prometheus image downloaded to your machine.** 
 
 Then create a **Docker Image** using this `Dockerfile`
 
@@ -89,11 +94,13 @@ docker run -p 9090:9090 prometheus-poc
 
 Now you have the **Prometheus** running on port `9090`.
 
-#### References
+### Graphs
 
-You can watch a [TechPrimers video](https://www.youtube.com/watch?v=PiBeO4E1xAU) talking about Prometheus instrumentation
-using Micrometer in a Spring Boot Application.
+Using prometheus you can generate a lot of graphs about your `API statistics.`
 
+![CPU Usage](img/graph.png)
+
+> **For more information, you can check [prometheus site](https://prometheus.io/docs/prometheus/latest/getting_started/).** 
 
 ### License
 MIT License. [Click here for more information.](LICENSE)
